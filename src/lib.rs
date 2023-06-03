@@ -13,7 +13,7 @@ mod wasi;
 mod wasi_helpers;
 
 thread_local! {
-    static RNG : RefCell<Option<rand::rngs::StdRng>> = RefCell::new(rand::rngs::StdRng::seed_from_u64(0));
+    static RNG : RefCell<Option<rand::rngs::StdRng>> = RefCell::new(Some(rand::rngs::StdRng::seed_from_u64(0)));
     static FS: RefCell<FileSystem> = RefCell::new(
         FileSystem::new(Box::new(StableStorage::new(DefaultMemoryImpl::default()))).unwrap()
     );
