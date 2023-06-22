@@ -5,7 +5,7 @@ edition = "2021"
 
 
 [dependencies]
-ic-cdk = "0.8"
+ic-cdk = "=0.8.0-beta.0"
 ic-stable-structures = "0.5.4"
 stable-fs = { git = "https://github.com/demergent-labs/stable-fs", rev = "f85a7919c7468552ec6aa123f80634ebf168093c" }
 rand = "0.8.5"
