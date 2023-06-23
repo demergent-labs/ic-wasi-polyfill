@@ -900,7 +900,8 @@ pub unsafe extern "C" fn __ic_custom_environ_sizes_get(
     len1: *mut wasi::Size,
     len2: *mut wasi::Size,
 ) -> i32 {
-    #[cfg(feature = "report_wasi_calls")]
+    // TODO it is unknown why this must be commented out to not cause a stack overflow
+    // #[cfg(feature = "report_wasi_calls")]
     let start = ic_cdk::api::instruction_counter();
     *len1 = 0;
     *len2 = 0;
