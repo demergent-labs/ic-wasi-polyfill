@@ -15,7 +15,7 @@ mod wasi;
 mod wasi_helpers;
 
 thread_local! {
-    static RNG : RefCell<Option<rand::rngs::StdRng>> = RefCell::new(None);
+    static RNG : RefCell<Option<rand::rngs::StdRng>> = RefCell::new(Some(rand::rngs::StdRng::from_seed([0u8; 32])));
 
     static FS: RefCell<FileSystem> = RefCell::new(
 
